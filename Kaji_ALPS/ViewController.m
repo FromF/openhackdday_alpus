@@ -55,6 +55,7 @@ const NSString *key_acc_z = @"acc_z";
 
 @property (weak, nonatomic) IBOutlet UILabel *label1;
 @property (weak, nonatomic) IBOutlet UILabel *label2;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *modeSegment;
 
 @end
 
@@ -679,11 +680,15 @@ const NSString *key_acc_z = @"acc_z";
         if (diff_value > diff_thred_abs) {
             self.label1.text = @"上";
             [scratch_back stop];
-            [scratch_forward play];
+            if (self.modeSegment.selectedSegmentIndex == 0) {
+                [scratch_forward play];
+            }
         } else if (diff_value < (diff_thred_abs * -1.0f)) {
             self.label1.text = @"下";
             [scratch_forward stop];
-            [scratch_back play];
+            if (self.modeSegment.selectedSegmentIndex == 0) {
+                [scratch_back play];
+            }
         } else {
             //処理なし
         }
@@ -705,6 +710,9 @@ const NSString *key_acc_z = @"acc_z";
         self.label2.text = @"";
         if (acceleration_value_total > tap_thred_abs) {
             self.label2.text = @"タップ";
+            if (self.modeSegment.selectedSegmentIndex == 1) {
+                //音
+            }
         } else {
         }
     }

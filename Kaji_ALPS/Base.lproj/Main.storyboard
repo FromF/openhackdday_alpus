@@ -41,12 +41,25 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DhU-Le-Jud">
+                                <rect key="frame" x="200" y="274" width="201" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="201" id="COu-fu-OPK"/>
+                                    <constraint firstAttribute="height" constant="28" id="HTq-XE-uAO"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="皿洗い"/>
+                                    <segment title="布団たたき"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fDC-Re-0ox" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="0Kd-f8-7pi"/>
                             <constraint firstItem="Hob-Rr-Kek" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="1F9-Ca-Km8"/>
                             <constraint firstItem="Hob-Rr-Kek" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8o9-PE-P35"/>
+                            <constraint firstItem="DhU-Le-Jud" firstAttribute="top" secondItem="Hob-Rr-Kek" secondAttribute="bottom" constant="31" id="GYY-Ok-V5P"/>
+                            <constraint firstAttribute="centerX" secondItem="DhU-Le-Jud" secondAttribute="centerX" id="ebK-DJ-4Qf"/>
                             <constraint firstItem="fDC-Re-0ox" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="raj-Nu-tw9"/>
                             <constraint firstItem="fDC-Re-0ox" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="wVX-gT-N1e"/>
                             <constraint firstItem="Hob-Rr-Kek" firstAttribute="top" secondItem="fDC-Re-0ox" secondAttribute="bottom" constant="15" id="zEE-py-zUv"/>
@@ -55,6 +68,7 @@
                     <connections>
                         <outlet property="label1" destination="fDC-Re-0ox" id="guQ-gb-3CL"/>
                         <outlet property="label2" destination="Hob-Rr-Kek" id="7Xp-OU-1iA"/>
+                        <outlet property="modeSegment" destination="DhU-Le-Jud" id="dSE-Wh-Nfu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
