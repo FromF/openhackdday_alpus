@@ -18,6 +18,7 @@
 		9D63A2C61AAB2403000C54BB /* scratch_forward.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9D63A2C41AAB2403000C54BB /* scratch_forward.wav */; };
 		9D63A2C71AAB2403000C54BB /* scratch_back.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9D63A2C51AAB2403000C54BB /* scratch_back.wav */; };
 		9D63A2C91AAB251C000C54BB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D63A2C81AAB251C000C54BB /* AVFoundation.framework */; };
+		9D63A2D01AAB3DD9000C54BB /* taiko.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9D63A2CF1AAB3DD9000C54BB /* taiko.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		9D63A2C41AAB2403000C54BB /* scratch_forward.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = scratch_forward.wav; sourceTree = "<group>"; };
 		9D63A2C51AAB2403000C54BB /* scratch_back.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = scratch_back.wav; sourceTree = "<group>"; };
 		9D63A2C81AAB251C000C54BB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9D63A2CF1AAB3DD9000C54BB /* taiko.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = taiko.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			children = (
 				9D63A2C41AAB2403000C54BB /* scratch_forward.wav */,
 				9D63A2C51AAB2403000C54BB /* scratch_back.wav */,
+				9D63A2CF1AAB3DD9000C54BB /* taiko.wav */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				9D63A2AD1AAACAD9000C54BB /* LaunchScreen.xib in Resources */,
 				9D63A2AA1AAACAD9000C54BB /* Images.xcassets in Resources */,
 				9D63A2C61AAB2403000C54BB /* scratch_forward.wav in Resources */,
+				9D63A2D01AAB3DD9000C54BB /* taiko.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

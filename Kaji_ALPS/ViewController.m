@@ -51,6 +51,8 @@ const NSString *key_acc_z = @"acc_z";
     AVAudioPlayer *scratch_forward;
     ///音データ(scratch_back.wav)
     AVAudioPlayer *scratch_back;
+    ///音データ(taiko.wav)
+    AVAudioPlayer *taiko;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *label1;
@@ -79,6 +81,11 @@ const NSString *key_acc_z = @"acc_z";
         NSString *path = [[NSBundle mainBundle] pathForResource:@"scratch_back" ofType:@"wav"];
         NSURL *url = [NSURL fileURLWithPath:path];
         scratch_back = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    }
+    {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"taiko" ofType:@"wav"];
+        NSURL *url = [NSURL fileURLWithPath:path];
+        taiko = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     }
     
     // CoreBluetoothManagerの初期化
@@ -623,7 +630,7 @@ const NSString *key_acc_z = @"acc_z";
     ///各方向(xyz)の角速度の値を平均化するためのサンプル数
     int max_array = 5;
     ///平均化した加速度を保持するサンプル数
-    int max_array2 = 10;
+    int max_array2 = 5;
     
     //センサーの加速度を格納する
     {
@@ -679,14 +686,14 @@ const NSString *key_acc_z = @"acc_z";
         //上下かを判定する
         if (diff_value > diff_thred_abs) {
             self.label1.text = @"上";
-            [scratch_back stop];
             if (self.modeSegment.selectedSegmentIndex == 0) {
+                [scratch_back stop];
                 [scratch_forward play];
             }
         } else if (diff_value < (diff_thred_abs * -1.0f)) {
             self.label1.text = @"下";
-            [scratch_forward stop];
             if (self.modeSegment.selectedSegmentIndex == 0) {
+                [scratch_forward stop];
                 [scratch_back play];
             }
         } else {
@@ -712,6 +719,7 @@ const NSString *key_acc_z = @"acc_z";
             self.label2.text = @"タップ";
             if (self.modeSegment.selectedSegmentIndex == 1) {
                 //音
+                [taiko play];
             }
         } else {
         }
