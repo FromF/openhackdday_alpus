@@ -18,34 +18,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DhU-Le-Jud">
-                                <rect key="frame" x="200" y="562" width="201" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DhU-Le-Jud">
+                                <rect key="frame" x="16" y="562" width="201" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="201" id="COu-fu-OPK"/>
                                     <constraint firstAttribute="height" constant="28" id="HTq-XE-uAO"/>
+                                    <constraint firstAttribute="width" constant="201" id="avK-K1-iEP"/>
+                                    <constraint firstAttribute="height" constant="28" id="rqt-bk-gud"/>
                                 </constraints>
                                 <segments>
                                     <segment title="皿洗い"/>
                                     <segment title="布団たたき"/>
                                 </segments>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="COu-fu-OPK"/>
+                                        <exclude reference="HTq-XE-uAO"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="selectAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="HXN-Jb-QD5"/>
+                                </connections>
                             </segmentedControl>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arai_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="PNV-Sa-t0r">
-                                <rect key="frame" x="16" y="20" width="568" height="502"/>
+                                <rect key="frame" x="16" y="20" width="568" height="500"/>
                             </imageView>
+                            <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5mY-49-suo">
+                                <rect key="frame" x="535" y="560" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="G5h-CA-hjC"/>
+                                    <constraint firstAttribute="width" constant="49" id="yCn-fo-1wN"/>
+                                </constraints>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="PNV-Sa-t0r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="66S-3y-Psm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DhU-Le-Jud" secondAttribute="bottom" constant="10" id="83C-3Q-5y5"/>
+                            <constraint firstItem="DhU-Le-Jud" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="106" id="Bss-iG-gk2"/>
+                            <constraint firstItem="5mY-49-suo" firstAttribute="leading" secondItem="DhU-Le-Jud" secondAttribute="trailing" constant="30" id="F3j-5a-uzZ"/>
                             <constraint firstItem="PNV-Sa-t0r" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="FIv-lh-Wfr"/>
+                            <constraint firstItem="5mY-49-suo" firstAttribute="leading" secondItem="DhU-Le-Jud" secondAttribute="trailing" constant="32" id="Mu5-bi-vRO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5mY-49-suo" secondAttribute="bottom" constant="9" id="S9N-Ch-3Ln"/>
+                            <constraint firstAttribute="centerX" secondItem="DhU-Le-Jud" secondAttribute="centerX" id="T8M-sF-2EM"/>
                             <constraint firstItem="PNV-Sa-t0r" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="bVR-hK-hsK"/>
+                            <constraint firstItem="5mY-49-suo" firstAttribute="leading" secondItem="DhU-Le-Jud" secondAttribute="trailing" constant="32" id="bsk-ck-ISa"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DhU-Le-Jud" secondAttribute="bottom" constant="10" id="cgS-zI-DSG"/>
                             <constraint firstAttribute="centerX" secondItem="DhU-Le-Jud" secondAttribute="centerX" id="ebK-DJ-4Qf"/>
+                            <constraint firstItem="5mY-49-suo" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="g13-fY-pLp"/>
                             <constraint firstItem="DhU-Le-Jud" firstAttribute="top" secondItem="PNV-Sa-t0r" secondAttribute="bottom" constant="40" id="iaU-Nt-eK4"/>
+                            <constraint firstItem="5mY-49-suo" firstAttribute="top" secondItem="PNV-Sa-t0r" secondAttribute="bottom" constant="40" id="mXU-sv-P0c"/>
+                            <constraint firstItem="5mY-49-suo" firstAttribute="leading" secondItem="DhU-Le-Jud" secondAttribute="trailing" constant="32" id="tk6-yG-d1R"/>
+                            <constraint firstItem="DhU-Le-Jud" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yvS-Nv-nfA"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Bss-iG-gk2"/>
+                                <exclude reference="T8M-sF-2EM"/>
+                                <exclude reference="ebK-DJ-4Qf"/>
+                                <exclude reference="iaU-Nt-eK4"/>
+                                <exclude reference="cgS-zI-DSG"/>
+                                <exclude reference="Mu5-bi-vRO"/>
+                                <exclude reference="bsk-ck-ISa"/>
+                                <exclude reference="tk6-yG-d1R"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="PNV-Sa-t0r" id="txw-ad-LNP"/>
                         <outlet property="modeSegment" destination="DhU-Le-Jud" id="dSE-Wh-Nfu"/>
+                        <outlet property="stateSwitch" destination="5mY-49-suo" id="pyI-T8-DcB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

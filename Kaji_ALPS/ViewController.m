@@ -61,12 +61,15 @@ const NSString *key_acc_z = @"acc_z";
     AVAudioPlayer *iyo;
     ///音データ(iyoiyo.wav)
     AVAudioPlayer *iyoiyo;
+    ///布団たたき時に叩いていない画像に戻すためのタイマー
+    NSTimer *offImageTimer;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *label1;
 @property (weak, nonatomic) IBOutlet UILabel *label2;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *modeSegment;
+@property (weak, nonatomic) IBOutlet UISwitch *stateSwitch;
 
 @end
 
@@ -84,6 +87,7 @@ const NSString *key_acc_z = @"acc_z";
     averageArray = [[NSMutableArray alloc] init];
     self.label1.text = @"disconnected";
     self.label2.text = @"";
+    self.stateSwitch.on = NO;
     
     //音の設定
     {
@@ -658,6 +662,7 @@ const NSString *key_acc_z = @"acc_z";
 {
     self.label1.text = @"connected";
     self.label2.text = @"";
+    self.stateSwitch.on = YES;
     [acceleration removeAllObjects];
     [averageArray removeAllObjects];
 }
@@ -666,10 +671,12 @@ const NSString *key_acc_z = @"acc_z";
 {
     self.label1.text = @"disconnected";
     self.label2.text = @"";
+    self.stateSwitch.on = NO;
     [acceleration removeAllObjects];
     [averageArray removeAllObjects];
 }
 
+#pragma mark - Analyze
 -(void)LogOutput
 {
     //TRACE(@"%@",[NSString stringWithFormat:@"%4.1f, %4.1f, %4.1f",datAx, datAy, datAz]);
@@ -737,20 +744,22 @@ const NSString *key_acc_z = @"acc_z";
         if (diff_value > diff_thred_abs) {
             self.label1.text = @"上";
             if (self.modeSegment.selectedSegmentIndex == 0) {
-                self.imageView.image = [UIImage imageNamed:@"arai_01.png"];
                 if (ransu == 3) {
+                    self.imageView.image = [UIImage imageNamed:@"Yoshida_2.png"];
                     [asore play];
                 } else {
+                    self.imageView.image = [UIImage imageNamed:@"arai_01.png"];
                     [scratch_forward play];
                 }
             }
         } else if (diff_value < (diff_thred_abs * -1.0f)) {
             self.label1.text = @"下";
             if (self.modeSegment.selectedSegmentIndex == 0) {
-                self.imageView.image = [UIImage imageNamed:@"arai_02.png"];
                 if (ransu == 3) {
+                    self.imageView.image = [UIImage imageNamed:@"Yoshida_2.png"];
                     [iinee play];
                 } else {
+                    self.imageView.image = [UIImage imageNamed:@"arai_02.png"];
                     [scratch_back play];
                 }
             }
@@ -776,20 +785,42 @@ const NSString *key_acc_z = @"acc_z";
         if (acceleration_value_total > tap_thred_abs) {
             self.label2.text = @"タップ";
             if (self.modeSegment.selectedSegmentIndex == 1) {
-                self.imageView.image = [UIImage imageNamed:@"tataku_01.png"];
+                //元の画像に戻すタイマースタート
+                [offImageTimer invalidate];
+                offImageTimer = [NSTimer scheduledTimerWithTimeInterval:0.2f target:self selector:@selector(tataku_02_int:) userInfo:nil repeats:YES];
+
                 //音
                 if (ransu == 3) {
+                    self.imageView.image = [UIImage imageNamed:@"Yoshida_1.png"];
                     [iyo play];
                 } else {
+                    self.imageView.image = [UIImage imageNamed:@"tataku_01.png"];
                     [taiko play];
                 }
             }
         } else {
-            if (self.modeSegment.selectedSegmentIndex == 1) {
-                self.imageView.image = [UIImage imageNamed:@"tataku_02.png"];
-            }
+            //無処理
         }
     }
 }
+
+-(void)tataku_02_int:(NSTimer*)timer{
+    if (self.modeSegment.selectedSegmentIndex == 1) {
+        self.imageView.image = [UIImage imageNamed:@"tataku_02.png"];
+    }
+}
+
+#pragma mark - UI Action
+- (IBAction)selectAction:(id)sender {
+    
+    if (self.modeSegment.selectedSegmentIndex == 0) {
+        self.imageView.image = [UIImage imageNamed:@"arai_01.png"];
+    }
+    if (self.modeSegment.selectedSegmentIndex == 1) {
+        self.imageView.image = [UIImage imageNamed:@"tataku_02.png"];
+    }
+    
+}
+
 
 @end
