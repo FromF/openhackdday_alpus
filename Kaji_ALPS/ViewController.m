@@ -638,6 +638,7 @@ const NSString *key_acc_z = @"acc_z";
         
         
         if (last_acceleration_value_2 != 255) {
+#if 0
             //float diff_value2 = last_acceleration_value_2 - acceleration_value_2;
             float diff_value2 = last_acceleration_value_2 - acceleration_value_y;
             if (diff_value2 > diff_thred) {
@@ -646,6 +647,9 @@ const NSString *key_acc_z = @"acc_z";
                 diff_thred = diff_value2;
             }
             [diffArray addObject:[NSNumber numberWithFloat:diff_value2]];
+#else
+            [diffArray addObject:[NSNumber numberWithFloat:acceleration_value_y]];
+#endif
 
             if ([diffArray count] > max_array2) {
                 float diff_value3 = [[diffArray objectAtIndex:0] floatValue] - [[diffArray lastObject] floatValue];
@@ -658,7 +662,7 @@ const NSString *key_acc_z = @"acc_z";
                     diff_thred_abs = (diff_thred * -1.0f);
                 }
 #else
-                diff_thred_abs = 0.3f;
+                diff_thred_abs = 1.0f;
 #endif
                 if (diff_value3 > diff_thred_abs) {
                     self.label1.text = @"下";
