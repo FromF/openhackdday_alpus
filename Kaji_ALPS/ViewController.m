@@ -10,13 +10,13 @@
 //Bluetooth LE
 #import <CoreBluetooth/CoreBluetooth.h>
 
-// デバイス名
+/// デバイス名
 #define DEVICE_NAME    @"Mul2001A"
 
-// サービスUUID
+/// サービスUUID
 #define SENSOR_SERVICE_UUID    @"56396415-E301-A7B4-DC48-CED976D324E9"
 
-// キャラクタリスティックUUID
+/// キャラクタリスティックUUID
 #define SENSOR_CHARACTERISTIC_UUID  @"38704154-9A8C-8F8F-4449-89C0AF8A0402"
 
 const NSString *key_acc_x = @"acc_x";
@@ -40,12 +40,10 @@ const NSString *key_acc_z = @"acc_z";
     float datPs;
 
     //加速度データを格納するエリア
+    ///加速度の生データ配列(xyz)
     NSMutableArray *acceleration;
-    NSMutableArray *diffArray;
-    float diff_thred;
-    
-    float last_acceleration_value_1;
-    float last_acceleration_value_2;
+    ///加速度の平均化したデータ配列
+    NSMutableArray *averageArray;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *label1;
@@ -61,7 +59,7 @@ const NSString *key_acc_z = @"acc_z";
     
     //初期化
     acceleration = [[NSMutableArray alloc] init];
-    diffArray = [[NSMutableArray alloc] init];
+    averageArray = [[NSMutableArray alloc] init];
     
     // CoreBluetoothManagerの初期化
     manager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
@@ -589,100 +587,78 @@ const NSString *key_acc_z = @"acc_z";
 -(void)createFile
 {
     [acceleration removeAllObjects];
-    [diffArray removeAllObjects];
-    last_acceleration_value_1 = 255;
-    last_acceleration_value_2 = 255;
-    diff_thred = 0;
+    [averageArray removeAllObjects];
 }
 
 -(void)closeFile
 {
     [acceleration removeAllObjects];
-    [diffArray removeAllObjects];
-    last_acceleration_value_1 = 255;
-    last_acceleration_value_2 = 255;
-    diff_thred = 0;
+    [averageArray removeAllObjects];
 }
 
 -(void)LogOutput
 {
     //TRACE(@"%@",[NSString stringWithFormat:@"%4.1f, %4.1f, %4.1f",datAx, datAy, datAz]);
     
-    NSDictionary *dictinary = [NSDictionary dictionaryWithObjectsAndKeys:
-                               [NSNumber numberWithFloat:datAx]    ,   key_acc_x,
-                               [NSNumber numberWithFloat:datAy]    ,   key_acc_y,
-                               [NSNumber numberWithFloat:datAz]    ,   key_acc_z,
-                               nil];
-    
-    [acceleration addObject:dictinary];
-    
+    ///各方向(xyz)の角速度の値を平均化するためのサンプル数
     int max_array = 5;
+    ///平均化した加速度を保持するサンプル数
     int max_array2 = 10;
     
+    //センサーの加速度を格納する
+    {
+        NSDictionary *dictinary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                   [NSNumber numberWithFloat:datAx]    ,   key_acc_x,
+                                   [NSNumber numberWithFloat:datAy]    ,   key_acc_y,
+                                   [NSNumber numberWithFloat:datAz]    ,   key_acc_z,
+                                   nil];
+        [acceleration addObject:dictinary];
+    }
+    
     if ([acceleration count] > max_array) {
+        //平均化するための加速度のサンプル数が基準に達した
+        //初期化
+        ///平均加速度(x)
         float acceleration_value_x = 0;
+        ///平均加速度(y)
         float acceleration_value_y = 0;
+        ///平均加速度(z)
         float acceleration_value_z = 0;
         for (NSDictionary *item in acceleration) {
+            //実際の加速度を加算する
             acceleration_value_x += [[item objectForKey:key_acc_x] floatValue];
             acceleration_value_y += [[item objectForKey:key_acc_y] floatValue];
             acceleration_value_z += [[item objectForKey:key_acc_z] floatValue];
         }
         
+        //加算した値を割って、平均値を求める
         acceleration_value_x = acceleration_value_x / (float)[acceleration count];
         acceleration_value_y = acceleration_value_y / (float)[acceleration count];
         acceleration_value_z = acceleration_value_z / (float)[acceleration count];
         
-        float acceleration_value_1 = atan(acceleration_value_x/acceleration_value_y) * 180.0f / M_PI;
-        float acceleration_value_2 = acos(acceleration_value_z) * 180.0f / M_PI;
+        //平均化加速度(y軸)を保持する
+        [averageArray addObject:[NSNumber numberWithFloat:acceleration_value_y]];
         
-        
-        if (last_acceleration_value_2 != 255) {
-#if 0
-            //float diff_value2 = last_acceleration_value_2 - acceleration_value_2;
-            float diff_value2 = last_acceleration_value_2 - acceleration_value_y;
-            if (diff_value2 > diff_thred) {
-                diff_thred = diff_value2;
-            } else if ((diff_value2 * -1.0f) > (diff_thred * -1.0f)) {
-                diff_thred = diff_value2;
-            }
-            [diffArray addObject:[NSNumber numberWithFloat:diff_value2]];
-#else
-            [diffArray addObject:[NSNumber numberWithFloat:acceleration_value_y]];
-#endif
-
-            if ([diffArray count] > max_array2) {
-                float diff_value3 = [[diffArray objectAtIndex:0] floatValue] - [[diffArray lastObject] floatValue];
-                [diffArray removeObjectAtIndex:0];
-                float diff_thred_abs = 0;
-#if 0
-                if (diff_thred > 0) {
-                    diff_thred_abs = diff_thred;
-                } else if (diff_thred < 0) {
-                    diff_thred_abs = (diff_thred * -1.0f);
-                }
-#else
-                diff_thred_abs = 1.0f;
-#endif
-                if (diff_value3 > diff_thred_abs) {
-                    self.label1.text = @"下";
-                } else if (diff_value3 < (diff_thred_abs * -1.0f)) {
-                    self.label1.text = @"上";
-                } else {
-                    //self.label1.text = @"---";
-                    //[diffArray removeLastObject];
-                    //diff_thred = 0;
-                }
-                TRACE(@"%4.1f",diff_value3);
-            }
-            
-        }
-        //last_acceleration_value_2 = acceleration_value_2;
-        last_acceleration_value_2 = acceleration_value_y;
-        //TRACE(@"%@",[NSString stringWithFormat:@"%4.1f, %4.1f, %4.1f, %4.1f, %4.1f",acceleration_value_x, acceleration_value_y, acceleration_value_z,acceleration_value_1,acceleration_value_2]);
-        //TRACE(@"%@",[NSString stringWithFormat:@", %4.1f, %4.1f",acceleration_value_1,acceleration_value_2]);
-
+        //規定数格納されているので１つ減らす
         [acceleration removeObjectAtIndex:0];
+    }
+    if ([averageArray count] > max_array2) {
+        //平均化加速度(y軸)をサンプル数が基準に達した
+        //加速度の差分を求める
+        float diff_value = [[averageArray objectAtIndex:0] floatValue] - [[averageArray lastObject] floatValue];
+        [averageArray removeObjectAtIndex:0];
+        //上下を判定するためのスレッシュ値の絶対値
+        float diff_thred_abs = 1.0f;
+        
+        //上下かを判定する
+        if (diff_value > diff_thred_abs) {
+            self.label1.text = @"上";
+        } else if (diff_value < (diff_thred_abs * -1.0f)) {
+            self.label1.text = @"下";
+        } else {
+            //処理なし
+        }
+        TRACE(@"%4.1f",diff_value);
     }
 }
 
