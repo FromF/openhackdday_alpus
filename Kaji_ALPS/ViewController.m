@@ -658,23 +658,24 @@ const NSString *key_acc_z = @"acc_z";
                     diff_thred_abs = (diff_thred * -1.0f);
                 }
 #else
-                diff_thred_abs = 0.1f;
+                diff_thred_abs = 0.3f;
 #endif
                 if (diff_value3 > diff_thred_abs) {
                     self.label1.text = @"下";
-                } else if ((diff_value3 * -1.0f) > diff_thred_abs) {
+                } else if (diff_value3 < (diff_thred_abs * -1.0f)) {
                     self.label1.text = @"上";
                 } else {
-                    self.label1.text = @"---";
+                    //self.label1.text = @"---";
                     //[diffArray removeLastObject];
-                    diff_thred = 0;
+                    //diff_thred = 0;
                 }
+                TRACE(@"%4.1f",diff_value3);
             }
             
         }
         //last_acceleration_value_2 = acceleration_value_2;
         last_acceleration_value_2 = acceleration_value_y;
-        TRACE(@"%@",[NSString stringWithFormat:@"%4.1f, %4.1f, %4.1f, %4.1f, %4.1f",acceleration_value_x, acceleration_value_y, acceleration_value_z,acceleration_value_1,acceleration_value_2]);
+        //TRACE(@"%@",[NSString stringWithFormat:@"%4.1f, %4.1f, %4.1f, %4.1f, %4.1f",acceleration_value_x, acceleration_value_y, acceleration_value_z,acceleration_value_1,acceleration_value_2]);
         //TRACE(@"%@",[NSString stringWithFormat:@", %4.1f, %4.1f",acceleration_value_1,acceleration_value_2]);
 
         [acceleration removeObjectAtIndex:0];
