@@ -47,6 +47,7 @@ const NSString *key_acc_z = @"acc_z";
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *label1;
+@property (weak, nonatomic) IBOutlet UILabel *label2;
 
 
 @end
@@ -637,7 +638,13 @@ const NSString *key_acc_z = @"acc_z";
         acceleration_value_z = acceleration_value_z / (float)[acceleration count];
         
         //平均化加速度(y軸)を保持する
-        [averageArray addObject:[NSNumber numberWithFloat:acceleration_value_y]];
+        NSDictionary *dictinary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                   [NSNumber numberWithFloat:acceleration_value_x]    ,   key_acc_x,
+                                   [NSNumber numberWithFloat:acceleration_value_y]    ,   key_acc_y,
+                                   [NSNumber numberWithFloat:acceleration_value_z]    ,   key_acc_z,
+                                   nil];
+
+        [averageArray addObject:dictinary];
         
         //規定数格納されているので１つ減らす
         [acceleration removeObjectAtIndex:0];
@@ -645,7 +652,7 @@ const NSString *key_acc_z = @"acc_z";
     if ([averageArray count] > max_array2) {
         //平均化加速度(y軸)をサンプル数が基準に達した
         //加速度の差分を求める
-        float diff_value = [[averageArray objectAtIndex:0] floatValue] - [[averageArray lastObject] floatValue];
+        float diff_value = [[[averageArray objectAtIndex:0] objectForKey:key_acc_y] floatValue] - [[[averageArray lastObject] objectForKey:key_acc_y] floatValue];
         [averageArray removeObjectAtIndex:0];
         //上下を判定するためのスレッシュ値の絶対値
         float diff_thred_abs = 1.0f;
@@ -658,7 +665,26 @@ const NSString *key_acc_z = @"acc_z";
         } else {
             //処理なし
         }
-        TRACE(@"%4.1f",diff_value);
+        //TRACE(@"%4.1f",diff_value);
+    }
+    {
+        //タップ判定
+        ///平均加速度(x)
+        float acceleration_value_x = [[[averageArray lastObject] objectForKey:key_acc_x] floatValue];
+        ///平均加速度(y)
+        float acceleration_value_y = [[[averageArray lastObject] objectForKey:key_acc_y] floatValue];
+        ///平均加速度(z)
+        float acceleration_value_z = [[[averageArray lastObject] objectForKey:key_acc_z] floatValue];
+        ///加速度の和
+        float acceleration_value_total = sqrt((acceleration_value_x * acceleration_value_x) + (acceleration_value_y * acceleration_value_y) + (acceleration_value_z * acceleration_value_z));
+        ///タップの閾値
+        float tap_thred_abs = 1.2f;
+        
+        self.label2.text = @"";
+        if (acceleration_value_total > tap_thred_abs) {
+            self.label2.text = @"タップ";
+        } else {
+        }
     }
 }
 
