@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -17,32 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDC-Re-0ox">
-                                <rect key="frame" x="16" y="28" width="568" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="DMW-9Y-lQN"/>
-                                    <constraint firstAttribute="height" constant="21" id="bmj-3Q-GOv"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="bmj-3Q-GOv"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hob-Rr-Kek">
-                                <rect key="frame" x="16" y="143" width="568" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="HSS-Vm-hMM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DhU-Le-Jud">
-                                <rect key="frame" x="200" y="274" width="201" height="29"/>
+                                <rect key="frame" x="200" y="562" width="201" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="201" id="COu-fu-OPK"/>
                                     <constraint firstAttribute="height" constant="28" id="HTq-XE-uAO"/>
@@ -52,22 +29,22 @@
                                     <segment title="布団たたき"/>
                                 </segments>
                             </segmentedControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arai_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="PNV-Sa-t0r">
+                                <rect key="frame" x="16" y="20" width="568" height="502"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fDC-Re-0ox" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="0Kd-f8-7pi"/>
-                            <constraint firstItem="Hob-Rr-Kek" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="1F9-Ca-Km8"/>
-                            <constraint firstItem="Hob-Rr-Kek" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8o9-PE-P35"/>
-                            <constraint firstItem="DhU-Le-Jud" firstAttribute="top" secondItem="Hob-Rr-Kek" secondAttribute="bottom" constant="31" id="GYY-Ok-V5P"/>
+                            <constraint firstItem="PNV-Sa-t0r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="66S-3y-Psm"/>
+                            <constraint firstItem="PNV-Sa-t0r" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="FIv-lh-Wfr"/>
+                            <constraint firstItem="PNV-Sa-t0r" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="bVR-hK-hsK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DhU-Le-Jud" secondAttribute="bottom" constant="10" id="cgS-zI-DSG"/>
                             <constraint firstAttribute="centerX" secondItem="DhU-Le-Jud" secondAttribute="centerX" id="ebK-DJ-4Qf"/>
-                            <constraint firstItem="fDC-Re-0ox" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="raj-Nu-tw9"/>
-                            <constraint firstItem="fDC-Re-0ox" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="wVX-gT-N1e"/>
-                            <constraint firstItem="Hob-Rr-Kek" firstAttribute="top" secondItem="fDC-Re-0ox" secondAttribute="bottom" constant="15" id="zEE-py-zUv"/>
+                            <constraint firstItem="DhU-Le-Jud" firstAttribute="top" secondItem="PNV-Sa-t0r" secondAttribute="bottom" constant="40" id="iaU-Nt-eK4"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="label1" destination="fDC-Re-0ox" id="guQ-gb-3CL"/>
-                        <outlet property="label2" destination="Hob-Rr-Kek" id="7Xp-OU-1iA"/>
+                        <outlet property="imageView" destination="PNV-Sa-t0r" id="txw-ad-LNP"/>
                         <outlet property="modeSegment" destination="DhU-Le-Jud" id="dSE-Wh-Nfu"/>
                     </connections>
                 </viewController>
@@ -75,4 +52,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="arai_01.png" width="1067" height="1067"/>
+    </resources>
 </document>

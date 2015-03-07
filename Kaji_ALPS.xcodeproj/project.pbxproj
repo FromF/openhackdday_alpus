@@ -15,10 +15,18 @@
 		9D63A2AD1AAACAD9000C54BB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D63A2AB1AAACAD9000C54BB /* LaunchScreen.xib */; };
 		9D63A2B91AAACAD9000C54BB /* Kaji_ALPSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D63A2B81AAACAD9000C54BB /* Kaji_ALPSTests.m */; };
 		9D63A2C31AAACD94000C54BB /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D63A2C21AAACD94000C54BB /* CoreBluetooth.framework */; };
-		9D63A2C61AAB2403000C54BB /* scratch_forward.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9D63A2C41AAB2403000C54BB /* scratch_forward.wav */; };
-		9D63A2C71AAB2403000C54BB /* scratch_back.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9D63A2C51AAB2403000C54BB /* scratch_back.wav */; };
 		9D63A2C91AAB251C000C54BB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D63A2C81AAB251C000C54BB /* AVFoundation.framework */; };
-		9D63A2D01AAB3DD9000C54BB /* taiko.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9D63A2CF1AAB3DD9000C54BB /* taiko.wav */; };
+		9DE0A4BD1AAB9DB700AE256D /* asore.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9DE0A4B11AAB9DB700AE256D /* asore.wav */; };
+		9DE0A4BE1AAB9DB700AE256D /* iinee.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9DE0A4B21AAB9DB700AE256D /* iinee.wav */; };
+		9DE0A4BF1AAB9DB700AE256D /* iyo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9DE0A4B31AAB9DB700AE256D /* iyo.wav */; };
+		9DE0A4C01AAB9DB700AE256D /* iyoiyo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9DE0A4B41AAB9DB700AE256D /* iyoiyo.wav */; };
+		9DE0A4C11AAB9DB700AE256D /* scratch_back.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9DE0A4B51AAB9DB700AE256D /* scratch_back.wav */; };
+		9DE0A4C21AAB9DB700AE256D /* scratch_forward.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9DE0A4B61AAB9DB700AE256D /* scratch_forward.wav */; };
+		9DE0A4C31AAB9DB700AE256D /* taiko.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9DE0A4B71AAB9DB700AE256D /* taiko.wav */; };
+		9DE0A4C41AAB9DB700AE256D /* arai_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE0A4B91AAB9DB700AE256D /* arai_01.png */; };
+		9DE0A4C51AAB9DB700AE256D /* arai_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE0A4BA1AAB9DB700AE256D /* arai_02.png */; };
+		9DE0A4C61AAB9DB700AE256D /* tataku_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE0A4BB1AAB9DB700AE256D /* tataku_01.png */; };
+		9DE0A4C71AAB9DB700AE256D /* tataku_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE0A4BC1AAB9DB700AE256D /* tataku_02.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,10 +54,18 @@
 		9D63A2B71AAACAD9000C54BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D63A2B81AAACAD9000C54BB /* Kaji_ALPSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Kaji_ALPSTests.m; sourceTree = "<group>"; };
 		9D63A2C21AAACD94000C54BB /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		9D63A2C41AAB2403000C54BB /* scratch_forward.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = scratch_forward.wav; sourceTree = "<group>"; };
-		9D63A2C51AAB2403000C54BB /* scratch_back.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = scratch_back.wav; sourceTree = "<group>"; };
 		9D63A2C81AAB251C000C54BB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		9D63A2CF1AAB3DD9000C54BB /* taiko.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = taiko.wav; sourceTree = "<group>"; };
+		9DE0A4B11AAB9DB700AE256D /* asore.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = asore.wav; sourceTree = "<group>"; };
+		9DE0A4B21AAB9DB700AE256D /* iinee.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = iinee.wav; sourceTree = "<group>"; };
+		9DE0A4B31AAB9DB700AE256D /* iyo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = iyo.wav; sourceTree = "<group>"; };
+		9DE0A4B41AAB9DB700AE256D /* iyoiyo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = iyoiyo.wav; sourceTree = "<group>"; };
+		9DE0A4B51AAB9DB700AE256D /* scratch_back.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = scratch_back.wav; sourceTree = "<group>"; };
+		9DE0A4B61AAB9DB700AE256D /* scratch_forward.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = scratch_forward.wav; sourceTree = "<group>"; };
+		9DE0A4B71AAB9DB700AE256D /* taiko.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = taiko.wav; sourceTree = "<group>"; };
+		9DE0A4B91AAB9DB700AE256D /* arai_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arai_01.png; sourceTree = "<group>"; };
+		9DE0A4BA1AAB9DB700AE256D /* arai_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arai_02.png; sourceTree = "<group>"; };
+		9DE0A4BB1AAB9DB700AE256D /* tataku_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tataku_01.png; sourceTree = "<group>"; };
+		9DE0A4BC1AAB9DB700AE256D /* tataku_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tataku_02.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +91,7 @@
 		9D63A2901AAACAD9000C54BB = {
 			isa = PBXGroup;
 			children = (
-				9D63A2CB1AAB252C000C54BB /* Resource */,
+				9DE0A4AF1AAB9DB700AE256D /* resource */,
 				9D63A2CA1AAB2520000C54BB /* Framework */,
 				9D63A29B1AAACAD9000C54BB /* Kaji_ALPS */,
 				9D63A2B51AAACAD9000C54BB /* Kaji_ALPSTests */,
@@ -142,14 +158,38 @@
 			name = Framework;
 			sourceTree = "<group>";
 		};
-		9D63A2CB1AAB252C000C54BB /* Resource */ = {
+		9DE0A4AF1AAB9DB700AE256D /* resource */ = {
 			isa = PBXGroup;
 			children = (
-				9D63A2C41AAB2403000C54BB /* scratch_forward.wav */,
-				9D63A2C51AAB2403000C54BB /* scratch_back.wav */,
-				9D63A2CF1AAB3DD9000C54BB /* taiko.wav */,
+				9DE0A4B01AAB9DB700AE256D /* audio */,
+				9DE0A4B81AAB9DB700AE256D /* image */,
 			);
-			name = Resource;
+			path = resource;
+			sourceTree = "<group>";
+		};
+		9DE0A4B01AAB9DB700AE256D /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				9DE0A4B11AAB9DB700AE256D /* asore.wav */,
+				9DE0A4B21AAB9DB700AE256D /* iinee.wav */,
+				9DE0A4B31AAB9DB700AE256D /* iyo.wav */,
+				9DE0A4B41AAB9DB700AE256D /* iyoiyo.wav */,
+				9DE0A4B51AAB9DB700AE256D /* scratch_back.wav */,
+				9DE0A4B61AAB9DB700AE256D /* scratch_forward.wav */,
+				9DE0A4B71AAB9DB700AE256D /* taiko.wav */,
+			);
+			path = audio;
+			sourceTree = "<group>";
+		};
+		9DE0A4B81AAB9DB700AE256D /* image */ = {
+			isa = PBXGroup;
+			children = (
+				9DE0A4B91AAB9DB700AE256D /* arai_01.png */,
+				9DE0A4BA1AAB9DB700AE256D /* arai_02.png */,
+				9DE0A4BB1AAB9DB700AE256D /* tataku_01.png */,
+				9DE0A4BC1AAB9DB700AE256D /* tataku_02.png */,
+			);
+			path = image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +241,7 @@
 				TargetAttributes = {
 					9D63A2981AAACAD9000C54BB = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 5BJR2WYNRK;
 					};
 					9D63A2B11AAACAD9000C54BB = {
 						CreatedOnToolsVersion = 6.2;
@@ -232,12 +273,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D63A2C71AAB2403000C54BB /* scratch_back.wav in Resources */,
+				9DE0A4BF1AAB9DB700AE256D /* iyo.wav in Resources */,
+				9DE0A4BE1AAB9DB700AE256D /* iinee.wav in Resources */,
+				9DE0A4C21AAB9DB700AE256D /* scratch_forward.wav in Resources */,
 				9D63A2A81AAACAD9000C54BB /* Main.storyboard in Resources */,
 				9D63A2AD1AAACAD9000C54BB /* LaunchScreen.xib in Resources */,
+				9DE0A4C31AAB9DB700AE256D /* taiko.wav in Resources */,
+				9DE0A4C11AAB9DB700AE256D /* scratch_back.wav in Resources */,
 				9D63A2AA1AAACAD9000C54BB /* Images.xcassets in Resources */,
-				9D63A2C61AAB2403000C54BB /* scratch_forward.wav in Resources */,
-				9D63A2D01AAB3DD9000C54BB /* taiko.wav in Resources */,
+				9DE0A4C61AAB9DB700AE256D /* tataku_01.png in Resources */,
+				9DE0A4C71AAB9DB700AE256D /* tataku_02.png in Resources */,
+				9DE0A4C51AAB9DB700AE256D /* arai_02.png in Resources */,
+				9DE0A4C41AAB9DB700AE256D /* arai_01.png in Resources */,
+				9DE0A4C01AAB9DB700AE256D /* iyoiyo.wav in Resources */,
+				9DE0A4BD1AAB9DB700AE256D /* asore.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +382,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -369,7 +418,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -381,6 +430,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Kaji_ALPS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -391,6 +441,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Kaji_ALPS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -450,6 +501,7 @@
 				9D63A2BE1AAACAD9000C54BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D63A2BF1AAACAD9000C54BB /* Build configuration list for PBXNativeTarget "Kaji_ALPSTests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +510,7 @@
 				9D63A2C11AAACAD9000C54BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -53,10 +53,19 @@ const NSString *key_acc_z = @"acc_z";
     AVAudioPlayer *scratch_back;
     ///音データ(taiko.wav)
     AVAudioPlayer *taiko;
+    ///音データ(asore.wav)
+    AVAudioPlayer *asore;
+    ///音データ(iinee.wav)
+    AVAudioPlayer *iinee;
+    ///音データ(iyo.wav)
+    AVAudioPlayer *iyo;
+    ///音データ(iyoiyo.wav)
+    AVAudioPlayer *iyoiyo;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *label1;
 @property (weak, nonatomic) IBOutlet UILabel *label2;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *modeSegment;
 
 @end
@@ -67,11 +76,16 @@ const NSString *key_acc_z = @"acc_z";
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    //スリープ禁止
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
+    
     //初期化
     acceleration = [[NSMutableArray alloc] init];
     averageArray = [[NSMutableArray alloc] init];
+    self.label1.text = @"disconnected";
+    self.label2.text = @"";
     
-    //
+    //音の設定
     {
         NSString *path = [[NSBundle mainBundle] pathForResource:@"scratch_forward" ofType:@"wav"];
         NSURL *url = [NSURL fileURLWithPath:path];
@@ -87,6 +101,27 @@ const NSString *key_acc_z = @"acc_z";
         NSURL *url = [NSURL fileURLWithPath:path];
         taiko = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     }
+    ///
+    {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"asore" ofType:@"wav"];
+        NSURL *url = [NSURL fileURLWithPath:path];
+        asore = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    }
+    {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"iinee" ofType:@"wav"];
+        NSURL *url = [NSURL fileURLWithPath:path];
+        iinee = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    }
+    {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"iyo" ofType:@"wav"];
+        NSURL *url = [NSURL fileURLWithPath:path];
+        iyo = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    }
+    {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"iyoiyo" ofType:@"wav"];
+        NSURL *url = [NSURL fileURLWithPath:path];
+        iyoiyo = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    }
     
     // CoreBluetoothManagerの初期化
     manager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
@@ -100,6 +135,14 @@ const NSString *key_acc_z = @"acc_z";
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    //スリープ有効
+    [UIApplication sharedApplication].idleTimerDisabled = NO;
+    
+    TRACE(@"end");
+}
 #pragma mark - BLE
 // ------------------------------------------------------------------------
 //  BLEstate
@@ -613,12 +656,16 @@ const NSString *key_acc_z = @"acc_z";
 #pragma mark - File Control
 -(void)createFile
 {
+    self.label1.text = @"connected";
+    self.label2.text = @"";
     [acceleration removeAllObjects];
     [averageArray removeAllObjects];
 }
 
 -(void)closeFile
 {
+    self.label1.text = @"disconnected";
+    self.label2.text = @"";
     [acceleration removeAllObjects];
     [averageArray removeAllObjects];
 }
@@ -631,6 +678,9 @@ const NSString *key_acc_z = @"acc_z";
     int max_array = 5;
     ///平均化した加速度を保持するサンプル数
     int max_array2 = 5;
+    
+    //乱数
+    int ransu = rand()%30 + 1;
     
     //センサーの加速度を格納する
     {
@@ -687,14 +737,22 @@ const NSString *key_acc_z = @"acc_z";
         if (diff_value > diff_thred_abs) {
             self.label1.text = @"上";
             if (self.modeSegment.selectedSegmentIndex == 0) {
-                [scratch_back stop];
-                [scratch_forward play];
+                self.imageView.image = [UIImage imageNamed:@"arai_01.png"];
+                if (ransu == 3) {
+                    [asore play];
+                } else {
+                    [scratch_forward play];
+                }
             }
         } else if (diff_value < (diff_thred_abs * -1.0f)) {
             self.label1.text = @"下";
             if (self.modeSegment.selectedSegmentIndex == 0) {
-                [scratch_forward stop];
-                [scratch_back play];
+                self.imageView.image = [UIImage imageNamed:@"arai_02.png"];
+                if (ransu == 3) {
+                    [iinee play];
+                } else {
+                    [scratch_back play];
+                }
             }
         } else {
             //処理なし
@@ -718,10 +776,18 @@ const NSString *key_acc_z = @"acc_z";
         if (acceleration_value_total > tap_thred_abs) {
             self.label2.text = @"タップ";
             if (self.modeSegment.selectedSegmentIndex == 1) {
+                self.imageView.image = [UIImage imageNamed:@"tataku_01.png"];
                 //音
-                [taiko play];
+                if (ransu == 3) {
+                    [iyo play];
+                } else {
+                    [taiko play];
+                }
             }
         } else {
+            if (self.modeSegment.selectedSegmentIndex == 1) {
+                self.imageView.image = [UIImage imageNamed:@"tataku_02.png"];
+            }
         }
     }
 }
