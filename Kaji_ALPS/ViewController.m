@@ -9,6 +9,8 @@
 #import "ViewController.h"
 //Bluetooth LE
 #import <CoreBluetooth/CoreBluetooth.h>
+//Audio
+#import <AVFoundation/AVFoundation.h>
 
 /// デバイス名
 #define DEVICE_NAME    @"Mul2001A"
@@ -44,11 +46,15 @@ const NSString *key_acc_z = @"acc_z";
     NSMutableArray *acceleration;
     ///加速度の平均化したデータ配列
     NSMutableArray *averageArray;
+    
+    ///音データ(scratch_forward.wav)
+    AVAudioPlayer *scratch_forward;
+    ///音データ(scratch_back.wav)
+    AVAudioPlayer *scratch_back;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *label1;
 @property (weak, nonatomic) IBOutlet UILabel *label2;
-
 
 @end
 
@@ -61,6 +67,18 @@ const NSString *key_acc_z = @"acc_z";
     //初期化
     acceleration = [[NSMutableArray alloc] init];
     averageArray = [[NSMutableArray alloc] init];
+    
+    //
+    {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"scratch_forward" ofType:@"wav"];
+        NSURL *url = [NSURL fileURLWithPath:path];
+        scratch_forward = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    }
+    {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"scratch_back" ofType:@"wav"];
+        NSURL *url = [NSURL fileURLWithPath:path];
+        scratch_back = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    }
     
     // CoreBluetoothManagerの初期化
     manager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
@@ -660,8 +678,12 @@ const NSString *key_acc_z = @"acc_z";
         //上下かを判定する
         if (diff_value > diff_thred_abs) {
             self.label1.text = @"上";
+            [scratch_back stop];
+            [scratch_forward play];
         } else if (diff_value < (diff_thred_abs * -1.0f)) {
             self.label1.text = @"下";
+            [scratch_forward stop];
+            [scratch_back play];
         } else {
             //処理なし
         }

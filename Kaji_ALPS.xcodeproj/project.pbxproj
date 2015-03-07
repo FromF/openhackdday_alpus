@@ -15,6 +15,9 @@
 		9D63A2AD1AAACAD9000C54BB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D63A2AB1AAACAD9000C54BB /* LaunchScreen.xib */; };
 		9D63A2B91AAACAD9000C54BB /* Kaji_ALPSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D63A2B81AAACAD9000C54BB /* Kaji_ALPSTests.m */; };
 		9D63A2C31AAACD94000C54BB /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D63A2C21AAACD94000C54BB /* CoreBluetooth.framework */; };
+		9D63A2C61AAB2403000C54BB /* scratch_forward.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9D63A2C41AAB2403000C54BB /* scratch_forward.wav */; };
+		9D63A2C71AAB2403000C54BB /* scratch_back.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9D63A2C51AAB2403000C54BB /* scratch_back.wav */; };
+		9D63A2C91AAB251C000C54BB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D63A2C81AAB251C000C54BB /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,9 @@
 		9D63A2B71AAACAD9000C54BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D63A2B81AAACAD9000C54BB /* Kaji_ALPSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Kaji_ALPSTests.m; sourceTree = "<group>"; };
 		9D63A2C21AAACD94000C54BB /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		9D63A2C41AAB2403000C54BB /* scratch_forward.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = scratch_forward.wav; sourceTree = "<group>"; };
+		9D63A2C51AAB2403000C54BB /* scratch_back.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = scratch_back.wav; sourceTree = "<group>"; };
+		9D63A2C81AAB251C000C54BB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D63A2C91AAB251C000C54BB /* AVFoundation.framework in Frameworks */,
 				9D63A2C31AAACD94000C54BB /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,7 +73,8 @@
 		9D63A2901AAACAD9000C54BB = {
 			isa = PBXGroup;
 			children = (
-				9D63A2C21AAACD94000C54BB /* CoreBluetooth.framework */,
+				9D63A2CB1AAB252C000C54BB /* Resource */,
+				9D63A2CA1AAB2520000C54BB /* Framework */,
 				9D63A29B1AAACAD9000C54BB /* Kaji_ALPS */,
 				9D63A2B51AAACAD9000C54BB /* Kaji_ALPSTests */,
 				9D63A29A1AAACAD9000C54BB /* Products */,
@@ -121,6 +129,24 @@
 				9D63A2B71AAACAD9000C54BB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9D63A2CA1AAB2520000C54BB /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				9D63A2C81AAB251C000C54BB /* AVFoundation.framework */,
+				9D63A2C21AAACD94000C54BB /* CoreBluetooth.framework */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		9D63A2CB1AAB252C000C54BB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				9D63A2C41AAB2403000C54BB /* scratch_forward.wav */,
+				9D63A2C51AAB2403000C54BB /* scratch_back.wav */,
+			);
+			name = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,9 +229,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D63A2C71AAB2403000C54BB /* scratch_back.wav in Resources */,
 				9D63A2A81AAACAD9000C54BB /* Main.storyboard in Resources */,
 				9D63A2AD1AAACAD9000C54BB /* LaunchScreen.xib in Resources */,
 				9D63A2AA1AAACAD9000C54BB /* Images.xcassets in Resources */,
+				9D63A2C61AAB2403000C54BB /* scratch_forward.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
