@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9D63A29F1AAACAD9000C54BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D63A29E1AAACAD9000C54BB /* main.m */; };
+		9D63A2A21AAACAD9000C54BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D63A2A11AAACAD9000C54BB /* AppDelegate.m */; };
+		9D63A2A51AAACAD9000C54BB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D63A2A41AAACAD9000C54BB /* ViewController.m */; };
+		9D63A2A81AAACAD9000C54BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D63A2A61AAACAD9000C54BB /* Main.storyboard */; };
+		9D63A2AA1AAACAD9000C54BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D63A2A91AAACAD9000C54BB /* Images.xcassets */; };
+		9D63A2AD1AAACAD9000C54BB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D63A2AB1AAACAD9000C54BB /* LaunchScreen.xib */; };
+		9D63A2B91AAACAD9000C54BB /* Kaji_ALPSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D63A2B81AAACAD9000C54BB /* Kaji_ALPSTests.m */; };
+		9D63A2C31AAACD94000C54BB /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D63A2C21AAACD94000C54BB /* CoreBluetooth.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9D63A2B31AAACAD9000C54BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D63A2911AAACAD9000C54BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D63A2981AAACAD9000C54BB;
+			remoteInfo = Kaji_ALPS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9D63A2991AAACAD9000C54BB /* Kaji_ALPS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kaji_ALPS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D63A29D1AAACAD9000C54BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D63A29E1AAACAD9000C54BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9D63A2A01AAACAD9000C54BB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9D63A2A11AAACAD9000C54BB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9D63A2A31AAACAD9000C54BB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9D63A2A41AAACAD9000C54BB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9D63A2A71AAACAD9000C54BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9D63A2A91AAACAD9000C54BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9D63A2AC1AAACAD9000C54BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9D63A2B21AAACAD9000C54BB /* Kaji_ALPSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Kaji_ALPSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D63A2B71AAACAD9000C54BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D63A2B81AAACAD9000C54BB /* Kaji_ALPSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Kaji_ALPSTests.m; sourceTree = "<group>"; };
+		9D63A2C21AAACD94000C54BB /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9D63A2961AAACAD9000C54BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D63A2C31AAACD94000C54BB /* CoreBluetooth.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D63A2AF1AAACAD9000C54BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9D63A2901AAACAD9000C54BB = {
+			isa = PBXGroup;
+			children = (
+				9D63A2C21AAACD94000C54BB /* CoreBluetooth.framework */,
+				9D63A29B1AAACAD9000C54BB /* Kaji_ALPS */,
+				9D63A2B51AAACAD9000C54BB /* Kaji_ALPSTests */,
+				9D63A29A1AAACAD9000C54BB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9D63A29A1AAACAD9000C54BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9D63A2991AAACAD9000C54BB /* Kaji_ALPS.app */,
+				9D63A2B21AAACAD9000C54BB /* Kaji_ALPSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9D63A29B1AAACAD9000C54BB /* Kaji_ALPS */ = {
+			isa = PBXGroup;
+			children = (
+				9D63A2A01AAACAD9000C54BB /* AppDelegate.h */,
+				9D63A2A11AAACAD9000C54BB /* AppDelegate.m */,
+				9D63A2A31AAACAD9000C54BB /* ViewController.h */,
+				9D63A2A41AAACAD9000C54BB /* ViewController.m */,
+				9D63A2A61AAACAD9000C54BB /* Main.storyboard */,
+				9D63A2A91AAACAD9000C54BB /* Images.xcassets */,
+				9D63A2AB1AAACAD9000C54BB /* LaunchScreen.xib */,
+				9D63A29C1AAACAD9000C54BB /* Supporting Files */,
+			);
+			path = Kaji_ALPS;
+			sourceTree = "<group>";
+		};
+		9D63A29C1AAACAD9000C54BB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9D63A29D1AAACAD9000C54BB /* Info.plist */,
+				9D63A29E1AAACAD9000C54BB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9D63A2B51AAACAD9000C54BB /* Kaji_ALPSTests */ = {
+			isa = PBXGroup;
+			children = (
+				9D63A2B81AAACAD9000C54BB /* Kaji_ALPSTests.m */,
+				9D63A2B61AAACAD9000C54BB /* Supporting Files */,
+			);
+			path = Kaji_ALPSTests;
+			sourceTree = "<group>";
+		};
+		9D63A2B61AAACAD9000C54BB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9D63A2B71AAACAD9000C54BB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9D63A2981AAACAD9000C54BB /* Kaji_ALPS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D63A2BC1AAACAD9000C54BB /* Build configuration list for PBXNativeTarget "Kaji_ALPS" */;
+			buildPhases = (
+				9D63A2951AAACAD9000C54BB /* Sources */,
+				9D63A2961AAACAD9000C54BB /* Frameworks */,
+				9D63A2971AAACAD9000C54BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kaji_ALPS;
+			productName = Kaji_ALPS;
+			productReference = 9D63A2991AAACAD9000C54BB /* Kaji_ALPS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9D63A2B11AAACAD9000C54BB /* Kaji_ALPSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D63A2BF1AAACAD9000C54BB /* Build configuration list for PBXNativeTarget "Kaji_ALPSTests" */;
+			buildPhases = (
+				9D63A2AE1AAACAD9000C54BB /* Sources */,
+				9D63A2AF1AAACAD9000C54BB /* Frameworks */,
+				9D63A2B01AAACAD9000C54BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9D63A2B41AAACAD9000C54BB /* PBXTargetDependency */,
+			);
+			name = Kaji_ALPSTests;
+			productName = Kaji_ALPSTests;
+			productReference = 9D63A2B21AAACAD9000C54BB /* Kaji_ALPSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9D63A2911AAACAD9000C54BB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Fuji Haruhito";
+				TargetAttributes = {
+					9D63A2981AAACAD9000C54BB = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					9D63A2B11AAACAD9000C54BB = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 9D63A2981AAACAD9000C54BB;
+					};
+				};
+			};
+			buildConfigurationList = 9D63A2941AAACAD9000C54BB /* Build configuration list for PBXProject "Kaji_ALPS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9D63A2901AAACAD9000C54BB;
+			productRefGroup = 9D63A29A1AAACAD9000C54BB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9D63A2981AAACAD9000C54BB /* Kaji_ALPS */,
+				9D63A2B11AAACAD9000C54BB /* Kaji_ALPSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9D63A2971AAACAD9000C54BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D63A2A81AAACAD9000C54BB /* Main.storyboard in Resources */,
+				9D63A2AD1AAACAD9000C54BB /* LaunchScreen.xib in Resources */,
+				9D63A2AA1AAACAD9000C54BB /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D63A2B01AAACAD9000C54BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9D63A2951AAACAD9000C54BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D63A2A51AAACAD9000C54BB /* ViewController.m in Sources */,
+				9D63A2A21AAACAD9000C54BB /* AppDelegate.m in Sources */,
+				9D63A29F1AAACAD9000C54BB /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D63A2AE1AAACAD9000C54BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D63A2B91AAACAD9000C54BB /* Kaji_ALPSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9D63A2B41AAACAD9000C54BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D63A2981AAACAD9000C54BB /* Kaji_ALPS */;
+			targetProxy = 9D63A2B31AAACAD9000C54BB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9D63A2A61AAACAD9000C54BB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D63A2A71AAACAD9000C54BB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9D63A2AB1AAACAD9000C54BB /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D63A2AC1AAACAD9000C54BB /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9D63A2BA1AAACAD9000C54BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9D63A2BB1AAACAD9000C54BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9D63A2BD1AAACAD9000C54BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Kaji_ALPS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9D63A2BE1AAACAD9000C54BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Kaji_ALPS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9D63A2C01AAACAD9000C54BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Kaji_ALPSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kaji_ALPS.app/Kaji_ALPS";
+			};
+			name = Debug;
+		};
+		9D63A2C11AAACAD9000C54BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Kaji_ALPSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kaji_ALPS.app/Kaji_ALPS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9D63A2941AAACAD9000C54BB /* Build configuration list for PBXProject "Kaji_ALPS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D63A2BA1AAACAD9000C54BB /* Debug */,
+				9D63A2BB1AAACAD9000C54BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D63A2BC1AAACAD9000C54BB /* Build configuration list for PBXNativeTarget "Kaji_ALPS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D63A2BD1AAACAD9000C54BB /* Debug */,
+				9D63A2BE1AAACAD9000C54BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9D63A2BF1AAACAD9000C54BB /* Build configuration list for PBXNativeTarget "Kaji_ALPSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D63A2C01AAACAD9000C54BB /* Debug */,
+				9D63A2C11AAACAD9000C54BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9D63A2911AAACAD9000C54BB /* Project object */;
+}
