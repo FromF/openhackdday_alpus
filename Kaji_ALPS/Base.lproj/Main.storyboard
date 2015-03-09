@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DhU-Le-Jud">
-                                <rect key="frame" x="16" y="562" width="201" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DhU-Le-Jud">
+                                <rect key="frame" x="171" y="562" width="201" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="201" id="COu-fu-OPK"/>
                                     <constraint firstAttribute="height" constant="28" id="HTq-XE-uAO"/>
@@ -50,6 +50,17 @@
                                     <constraint firstAttribute="width" constant="49" id="yCn-fo-1wN"/>
                                 </constraints>
                             </switch>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vJv-jR-rPB">
+                                <rect key="frame" x="382" y="562" width="123" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="XQs-4b-pOh"/>
+                                    <constraint firstAttribute="width" constant="123" id="sNW-Nv-xil"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="ALPS"/>
+                                    <segment title="iPhone"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -58,12 +69,15 @@
                             <constraint firstItem="DhU-Le-Jud" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="106" id="Bss-iG-gk2"/>
                             <constraint firstItem="5mY-49-suo" firstAttribute="leading" secondItem="DhU-Le-Jud" secondAttribute="trailing" constant="30" id="F3j-5a-uzZ"/>
                             <constraint firstItem="PNV-Sa-t0r" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="FIv-lh-Wfr"/>
+                            <constraint firstItem="5mY-49-suo" firstAttribute="leading" relation="lessThanOrEqual" secondItem="vJv-jR-rPB" secondAttribute="trailing" constant="30" id="IG8-es-emN"/>
                             <constraint firstItem="5mY-49-suo" firstAttribute="leading" secondItem="DhU-Le-Jud" secondAttribute="trailing" constant="32" id="Mu5-bi-vRO"/>
+                            <constraint firstItem="vJv-jR-rPB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DhU-Le-Jud" secondAttribute="trailing" constant="10" id="QlU-Wb-hPe"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5mY-49-suo" secondAttribute="bottom" constant="9" id="S9N-Ch-3Ln"/>
                             <constraint firstAttribute="centerX" secondItem="DhU-Le-Jud" secondAttribute="centerX" id="T8M-sF-2EM"/>
                             <constraint firstItem="PNV-Sa-t0r" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="bVR-hK-hsK"/>
                             <constraint firstItem="5mY-49-suo" firstAttribute="leading" secondItem="DhU-Le-Jud" secondAttribute="trailing" constant="32" id="bsk-ck-ISa"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DhU-Le-Jud" secondAttribute="bottom" constant="10" id="cgS-zI-DSG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vJv-jR-rPB" secondAttribute="bottom" constant="10" id="cqM-Da-YaR"/>
                             <constraint firstAttribute="centerX" secondItem="DhU-Le-Jud" secondAttribute="centerX" id="ebK-DJ-4Qf"/>
                             <constraint firstItem="5mY-49-suo" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="g13-fY-pLp"/>
                             <constraint firstItem="DhU-Le-Jud" firstAttribute="top" secondItem="PNV-Sa-t0r" secondAttribute="bottom" constant="40" id="iaU-Nt-eK4"/>
@@ -78,6 +92,7 @@
                                 <exclude reference="ebK-DJ-4Qf"/>
                                 <exclude reference="iaU-Nt-eK4"/>
                                 <exclude reference="cgS-zI-DSG"/>
+                                <exclude reference="F3j-5a-uzZ"/>
                                 <exclude reference="Mu5-bi-vRO"/>
                                 <exclude reference="bsk-ck-ISa"/>
                                 <exclude reference="tk6-yG-d1R"/>
@@ -87,6 +102,7 @@
                     <connections>
                         <outlet property="imageView" destination="PNV-Sa-t0r" id="txw-ad-LNP"/>
                         <outlet property="modeSegment" destination="DhU-Le-Jud" id="dSE-Wh-Nfu"/>
+                        <outlet property="sensorSegment" destination="vJv-jR-rPB" id="dHZ-0Q-zGu"/>
                         <outlet property="stateSwitch" destination="5mY-49-suo" id="pyI-T8-DcB"/>
                     </connections>
                 </viewController>

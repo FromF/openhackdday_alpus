@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D4A4CF61AAD214100FDCEC5 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4A4CF51AAD214100FDCEC5 /* CoreMotion.framework */; };
 		9D63A29F1AAACAD9000C54BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D63A29E1AAACAD9000C54BB /* main.m */; };
 		9D63A2A21AAACAD9000C54BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D63A2A11AAACAD9000C54BB /* AppDelegate.m */; };
 		9D63A2A51AAACAD9000C54BB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D63A2A41AAACAD9000C54BB /* ViewController.m */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D4A4CF51AAD214100FDCEC5 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		9D63A2991AAACAD9000C54BB /* Kaji_ALPS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kaji_ALPS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D63A29D1AAACAD9000C54BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D63A29E1AAACAD9000C54BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D4A4CF61AAD214100FDCEC5 /* CoreMotion.framework in Frameworks */,
 				9D63A2C91AAB251C000C54BB /* AVFoundation.framework in Frameworks */,
 				9D63A2C31AAACD94000C54BB /* CoreBluetooth.framework in Frameworks */,
 			);
@@ -156,6 +159,7 @@
 		9D63A2CA1AAB2520000C54BB /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				9D4A4CF51AAD214100FDCEC5 /* CoreMotion.framework */,
 				9D63A2C81AAB251C000C54BB /* AVFoundation.framework */,
 				9D63A2C21AAACD94000C54BB /* CoreBluetooth.framework */,
 			);

@@ -11,6 +11,8 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 //Audio
 #import <AVFoundation/AVFoundation.h>
+//CoreMotion
+#import <CoreMotion/CoreMotion.h>
 
 /// デバイス名
 #define DEVICE_NAME    @"Mul2001A"
@@ -63,6 +65,9 @@ const NSString *key_acc_z = @"acc_z";
     AVAudioPlayer *iyoiyo;
     ///布団たたき時に叩いていない画像に戻すためのタイマー
     NSTimer *offImageTimer;
+    
+    ///加速度センサー用
+    CMMotionManager *motionManager;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *label1;
@@ -70,6 +75,7 @@ const NSString *key_acc_z = @"acc_z";
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *modeSegment;
 @property (weak, nonatomic) IBOutlet UISwitch *stateSwitch;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *sensorSegment;
 
 @end
 
@@ -132,6 +138,31 @@ const NSString *key_acc_z = @"acc_z";
 
     // Bluetoothスキャン
     [self deviceScan];
+    
+    // CoreMotionの初期化
+    motionManager = [[CMMotionManager alloc] init];
+    
+    if (motionManager.accelerometerAvailable)
+    {
+        // センサーの更新間隔の指定
+        motionManager.accelerometerUpdateInterval = 1 / 60;  // 60Hz
+        
+        // ハンドラを指定
+        CMAccelerometerHandler handler = ^(CMAccelerometerData *data, NSError *error)
+        {
+            if (self.sensorSegment.selectedSegmentIndex != 0) {
+                //iPhone内蔵センサーを選択
+                datAx = data.acceleration.x;
+                datAy = data.acceleration.y;
+                datAz = data.acceleration.z;
+                [self LogOutput];
+            }
+        };
+        
+        // 加速度の取得開始
+        [motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:handler];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -141,6 +172,11 @@ const NSString *key_acc_z = @"acc_z";
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
+    
+    // 加速度の取得停止
+    if (motionManager.accelerometerActive) {
+        [motionManager stopAccelerometerUpdates];
+    }
     
     //スリープ有効
     [UIApplication sharedApplication].idleTimerDisabled = NO;
@@ -223,7 +259,10 @@ const NSString *key_acc_z = @"acc_z";
     }
     
     // ログファイルを閉じる
-    [self closeFile];
+    if (self.sensorSegment.selectedSegmentIndex == 0) {
+        //ALPSセンサーを選択
+        [self closeFile];
+    }
     
     NSLog(@"cleanup");
     
@@ -437,7 +476,10 @@ const NSString *key_acc_z = @"acc_z";
                 [self setNotifyValueForService:SENSOR_SERVICE_UUID characteristicUUID:SENSOR_CHARACTERISTIC_UUID peripheral:device enable:YES];
                 
                 // ログファイル作成
-                [self createFile];
+                if (self.sensorSegment.selectedSegmentIndex == 0) {
+                    //ALPSセンサーを選択
+                    [self createFile];
+                }
             }
         }
     }
@@ -651,7 +693,10 @@ const NSString *key_acc_z = @"acc_z";
         datPs /= 100.0f;
         
         // ログデータ書き込み処理
-        [self LogOutput];
+        if (self.sensorSegment.selectedSegmentIndex == 0) {
+            //ALPSセンサーを選択
+            [self LogOutput];
+        }
         
         // データ処理終了-----------------------------------------------------------------------------------
     }
